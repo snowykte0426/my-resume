@@ -1,15 +1,44 @@
- import { useState } from 'react'
+ import { useState, useId, createContext, useContext, useMemo, useRef } from 'react'
 import './Footnote.css'
+
+const FootnoteContext = createContext<{ getNumber: (id: string) => number } | null>(null)
+
+interface FootnoteProviderProps {
+  children: React.ReactNode
+}
+
+export function FootnoteProvider({ children }: FootnoteProviderProps) {
+  const counterRef = useRef(0)
+  const idMapRef = useRef<Map<string, number>>(new Map())
+
+  const value = useMemo(() => ({
+    getNumber: (id: string) => {
+      if (!idMapRef.current.has(id)) {
+        counterRef.current += 1
+        idMapRef.current.set(id, counterRef.current)
+      }
+      return idMapRef.current.get(id)!
+    }
+  }), [])
+
+  return (
+    <FootnoteContext.Provider value={value}>
+      {children}
+    </FootnoteContext.Provider>
+  )
+}
 
 interface FootnoteProps {
   children: React.ReactNode
 }
 
-let footnoteCounter = 0
-
 export function Footnote({ children }: FootnoteProps) {
   const [isVisible, setIsVisible] = useState(false)
-  const [id] = useState(() => ++footnoteCounter)
+  const reactId = useId()
+  const context = useContext(FootnoteContext)
+
+  // Context가 있으면 숫자 번호 사용, 없으면 React ID 사용
+  const id = context ? context.getNumber(reactId) : reactId
 
   return (
     <span className="inline-footnote">
