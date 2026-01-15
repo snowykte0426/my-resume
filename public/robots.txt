@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amond-server.kro.kr/sitemap.xml
