@@ -9,22 +9,22 @@ import Footnote from '../components/Footnote'
 지속가능한 코드베이스를 만들며 협업과 성장에 기여하는 것을 즐깁니다. <br />
 모든 일에 오너십을 가지고 책임감 있게 몰입하여 결과를 만듭니다.
 
-## Project Experience
+## Project
 
-### Hello, GSM | Server / Cloud Engineer
-*2025년 4월 - 2025년 11월 | team.the-moment (총 17명 규모)*
+### Hello, GSM | Server / Cloud Engineer<Footnote>총 17명 규모</Footnote>
+**2025년 4월 - 2025년 11월 | team.the-moment**
 
 광주소프트웨어마이스터고등학교의 신입생 입학 지원 시스템입니다. <br />
 기존에 수기로 진행되던 입학 지원 절차를 전산화하는 서비스로, <br />
 실 사용자 1800+명<Footnote>Google Analytics 기준</Footnote>, 매년 변경되는 입학 전형 기준에 유연하게 대응할 수 있도록 설계되었습니다.
 
-#### 2026 학년도 신입생 입학 지원 시스템 개발 및 운영/유지보수
-- 2026 학년도 입학 전형 기준에서 변경된 부분을 분석하고, 이를 반영하기 위한 시스템 수정 작업 수행
+#### 2026학년도 신입생 입학 지원 시스템 개발 및 운영/유지보수
+- 2026학년도 입학 전형 기준에서 변경된 부분을 분석하고, 이를 반영하기 위한 시스템 수정 작업 수행
 - AWS CodeDeploy를 활용한 무중단 배포 파이프라인 구축 및 운영
 - AWS 인프라 관리 및 최적화 작업 진행(<b>\$518.18에서 \$265.16으로 약 48.8%</b> 비용 절감)
     - 기존에 S3 버킷에 정적 파일을 저장하던 방식을 CloudFront로 전환하여 콘텐츠 전송 속도 향상 및 네트워크 비용 절감
-    - 서버 인스턴스 패밀리를 `t3` -> `t4g`로 전환하여 비용 절감 및 성능 향상
-- 기존에 서버 애플리케이션에서 처리하던 성적계산 로직을 Golang 기반 AWS Lambda로 이전하여 입학 전형 일정이 아닐 동안 서버 인스턴스 비용 발생 문제 해결 및 클라이언트 요청에 대한 응답 속도 향상
+    - 서버 인스턴스 패밀리를 `t3` -> `t4g`로 전환하여 비용 절감
+- 기존에 서버 애플리케이션에서 처리하던 성적계산 로직을 **Golang 기반 AWS Lambda로 이전**하여 입학 전형 일정이 아닐 동안 서버 인스턴스 비용 발생 문제 해결 및 클라이언트 요청에 대한 응답 속도 향상
 - 신입생 정보를 엑셀 시트로 다운로드하는 API 최적화
     - API 호출 시 신입생 row 1건 당 3번의 추가 쿼리가 발생하던 문제를 기존 프로젝트에서 사용되던 QueryDSL을 활용하여 1번의 쿼리로 변경
     - 처리되는 데이터가 많을 수록 메모리 사용량이 급증하는 문제를 해결하기 위해 Apache POI의 SXSSF API를 활용하여 메모리 사용량을 일정하게 유지
@@ -41,79 +41,120 @@ import Footnote from '../components/Footnote'
 #### 팀 내부 생산성 향상 기여
 - 원서 삭제, 사용자 권한 변경 등 개발 시 필요한 관리자 API를 개발하여 개발 및 테스트 환경에서 반복되는 작업을 자동화
 - 자주 사용되는 SQL 쿼리와 API 요청을 문서화하여 팀 내부 지식 공유에 기여
+- 복잡한 입학 전형 요강 도메인의 이해도 향상을 위해 이벤트 스토밍 세션을 진행하여 팀원들의 도메인 이해도 향상에 기여
 
-성공적인 프로젝트 개발과 운영을 통하여 2026 학년도 입학 전형 기간동안 **0%의 다운타임을 기록**하였으며, <br />
+성공적인 프로젝트 개발과 운영을 통하여 2026학년도 입학 전형 기간동안 **0%의 다운타임을 기록**하였으며, <br />
 매년 **약 1600+만원**의 예산 절감에 기여하였습니다.
 
 **주요 기술**: Spring Boot, AWS (EC2, S3, Lambda, RDS, CloudFront, CodeDeploy), MySQL, Redis, JPA, QueryDSL, Docker, GitHub Actions
 
-### Software Engineer | XYZ Solutions
-*2019년 6월 - 2021년 12월 | Seoul, Korea*
+### GSMC | Server Leader<Footnote>총 19명 규모</Footnote>
+**2025년 2월 - 2026년 1월 | Team incube**
 
-주요 성과:
-- [x] 사용자 인증 시스템 구현 (JWT, OAuth 2.0)
-- [x] RESTful API 설계 및 개발
-- [x] 테스트 커버리지 80% 이상 달성
-- [ ] 마이크로서비스 아키텍처 전환 (진행 중)
+광주소프트웨어마이스터고등학교만의 학생 평가 시스템인 GSM 인증제를 전산화하는 프로젝트입니다. <br />
+기존 40여가지에 달하는 평가 항목을 수기로 관리하던 방식을 개선하여, <br />
+2025학년도
 
-## 기술 스택 (Skills)
+#### GSMC 프로젝트 기획 및 서버 개발 총괄
+- 프로젝트 초기 기획 단계부터 참여하여 요구사항 분석 및 시스템 설계 주도
+  - 요구사항에 적합한 기술 스택 선정 및 아키텍처 설계
+    - GSM 인증제가 시행 기간 중에도 자주 변경되는 특성을 고려하여 헥사고날 아키텍처 기반으로 설계
+       - 애플리케이션을 3계층으로 나누고 결합도를 낮춤으로서 책임을 명확히 분리
+       - 의부 의존성 역시 Port Adapter 패턴을 활용하여 변경에 유연하게 대응 가능하도록 설계
+  - GSM 인증제의 복잡한 평가 항목과 가중치를 효율적으로 관리할 수 있는 데이터베이스 스키마 설계
+     - 인증제 항목 역시 변경 가능성을 고려하여 메타데이터 기반으로 설계
+  - 40여가지에 달하는 평가 항목 조회 메서드를 캐싱하여 API 응답 속도 향상
+     - 한정된 개발비용 내에서 추가적인 인스턴스 도입 없이도 Java Caffeine를 활용하여 성능 최적화 달성
+     - 자격증 등록 API의 응답 속도가 **평균 669ms → 352ms로 47.4% 향상**
+  - 미사용 파일 자동 삭제 기능 구현
+     - S3 버킷에 업로드된 파일 중 어떤 테이블에서도 참조되지 않는 파일을 주기적으로 삭제하는 기능 구현
+     - 삭제 중 문제 발생 또는 중단 시에도 안정적으로 재시작할 수 있도록 설계
+     - 스케쥴러 실행 결과를 팀 내 메신저로 전송하여 운영 편의성 향상
+  - Kotest 기반으로 테스트 코드를 작성하여 Kotlin DSL의 가독성을 활용한 유지보수성 높은 테스트 코드 작성
+     - **프로잭트 테스트 커버리지 75% 이상 달성**
+#### 서버 리더로서 팀원 관리 및 협업 촉진
+- 데일리 스크럼 및 스프린트 진행으로 팀원의 프로젝트 참여를 독려하고 효율적인 협업 환경 조성
+- SSH 원격 접속 및 배포 전략 가이드 문서 작성으로 팀원들의 개발 환경 설정 및 배포 작업 지원
+- Exposed ORM 등 익숙하지 않은 기술 스택에 대한 스터디 세션 진행으로 팀원들의 기술 역량 향상에 기여
+#### 개발 환경 구축 및 운영 자동화
+- Docker와 Nginx를 활용한 개발 및 배포 환경 구축
+- SSH 원격 접속 환경에서 AWS CodeDeploy의 Hooks를 모방한 Action 개발로 팀원들이 배포 작업을 손쉽게 수행할 수 있도록 지원
+- GitHub Actions를 활용한 CI/CD 파이프라인 구축으로 코드 품질 향상 및 배포 자동화 달성
 
-| 분야 | 기술 |
-|------|------|
-| Frontend | React, TypeScript, Vue.js, Vite, Webpack |
-| Backend | Node.js, Express, NestJS, Python, Django |
-| Database | PostgreSQL, MySQL, MongoDB, Redis |
-| DevOps | Docker, AWS (EC2, S3, Lambda), GitHub Actions |
-| Tools | Git, VS Code, Figma, Jira |
+2025학년도 GSM 인증제의 성공적인 시행을 통해 학교의 평가 시스템 현대화에 기여하였으며, <br />
+가치를 인정받아 익년에도 프로젝트를 이어나가게 되었습니다. <br />
+전산화를 통해 기존에 **6개월 이상 소요되던 평가 절차를 2주 이내로 단축**시키는 성과를 이루었습니다.
 
-## 프로젝트 (Projects)
+#### DataGSM | Backend / Cloud Leader<Footnote>총 7명 규모</Footnote>
+**2025년 11월 - 현재 | team.the-moment**
 
-### 이커머스 플랫폼 구축
-*2023년 3월 - 2023년 12월*
+광주소프트웨어마이스터고등학교 교내 서비스들의 지원을 위해 OpenAPI와 OAuth 인증 시스템을<br />
+제공하는 서비스로 실제 학생들의 소요제기로 시작되어 <br />
+**매일 5000+건의 요청을 처리**하고 있습니다.
 
-대규모 이커머스 플랫폼의 프론트엔드 개발을 주도했습니다:
+#### 프로젝트 기획 및 아키텍처 설계
+- 프로젝트 초기 기획 단계부터 참여하였으며 실제 학생들의 요구사항을 정리하여 서비스 설계에 반영
+- 멀티모듈 프로젝트 구조 설계로 서비스 확장성 및 유지보수성 향상
+  - 인증 모듈, 공통 모듈, API 모듈 등으로 프로젝트를 분리하여 각 모듈의 책임을 명확히 구분
+- OpenAPI 설계 및 문서화
+  - 재학생 정보, 동아리 정보, 프로젝트 정보 등 다양한 데이터를 제공하는 OpenAPI 설계
+#### OpenAPI SDK for Java/Kotlin 개발
+- OpenAPI를 손쉽게 사용할 수 있도록 Java/Kotlin용 SDK 개발
+- Spring Boot와의 원활한 통합이 가능토록 설계
+- OpenAPI를 호출하는 과정을 추상화하여 개발자 경험 향상
+#### 오픈소스 문화 조성 및 팀 리더십 발휘
+- 단순히 팀 내부에서만 개발하는 것이 아닌, 오픈소스 프로젝트로서의 가치를 창출하기 위해 노력
+- GitHub를 통한 코드 리뷰 및 이슈 관리를 활성화하여 외부 기여자들과의 협업 촉진
+- 기술 문서 작성 및 유지보수로 프로젝트의 지속적인 발전에 기여
 
-```typescript
-// 상품 검색 최적화 예시
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  category: string;
-}
+## Open Source Contributions
+- [spring-security SAML 2.0 마이그레이션 가이드 문서 개선](https://github.com/spring-projects/spring-security/pull/17076)
+- [spring-kafka 테스트 코드 모듈화 리팩터링](https://github.com/spring-projects/spring-kafka/pull/4031)
+- [mockk 중복 설정 로딩 최적화](https://github.com/mockk/mockk/pull/1474)
 
-const searchProducts = async (query: string): Promise<Product[]> => {
-  const results = await fetch(`/api/products/search?q=${query}`);
-  return results.json();
-};
-```
+## Experience
+#### [QueryDSL MySQL JSON 함수 지원 확장 개발](https://github.com/snowykte0426/querydsl-mysql-json-query-support)
+- QueryDSL에서 MySQL JSON 함수를 지원하는 오픈소스 프로젝트를 진행하여 MySQL JSON 함수 사용 시<br />
+타입 안전성을 제공합니다.
+- Spring Data JPA와의 호환성을 고려하여 개발되어 기존 프로젝트에 쉽게 통합할 수 있습니다.
 
-**성과**:
-- 월간 활성 사용자 10만 명 달성
-- 평균 응답 시간 200ms 이하 유지
-- 모바일 반응형 디자인 구현
+#### [Spring Boot 유틸리티 라이브러리 개발](https://github.com/snowykte0426/peanut-butter)
+- Spring Boot 애플리케이션 개발 시 자주 사용되는 기능들을 모듈화하여 제공하는<br />
+유틸리티 라이브러리를 개발하였습니다.
+- 필드 값 동등성 검사, Kotlin 비동기 로깅, 서버 애플리케이션 TimeZone 설정 등 다양한 기능을 포함하고 있습니다.
+- **누적 다운로드 수 3000+회를 기록**하며 교내 많은 프로젝트에서 활용되고 있습니다.
 
-> "사용자 경험을 최우선으로 생각하며, 성능과 접근성을 모두 고려한 개발을 지향합니다."
+#### <u>team.the-moment 서버 포지션 헤더</u>
+- 약 40여명의 재학/졸업생이 소속된 교내 개발 동아리의 서버 포지션 헤더를 맡아, 입학 지원 시스템과 <br/ >학과체험 신청 시스템 등 다양한 프로젝트를 주도적으로 이끌고 있습니다.
 
-### 실시간 협업 도구 개발
-*2021년 1월 - 2021년 12월*
+#### [교내 기숙사 세탁/건조기 관리 시스템 개발 및 운영](https://github.com/team-washer/Washer-Backend-v2)
+- 광주소프트웨어마이스터고등학교 기숙사 내 세탁기와 건조기의 사용 현황을 실시간으로 모니터링하고 관리하는 시스템을 개발 및 운영하고 있습니다.
+- **누적 사용자 600+명, 일일 평균 100+여명의 사용자가 이용**하고 있습니다.
+- **SmartThings API를 활용하여 IoT 기기와 연동**하고, Spring Boot와 MySQL을 기반으로 안정적인 백엔드 시스템을 구축하였습니다.
 
-WebSocket을 활용한 실시간 협업 툴 개발:
+## Skills
+- Java, Kotlin
+- Spring Boot, JPA, QueryDSL
+- MySQL, Redis
+- AWS (EC2, S3, Lambda, RDS, CloudFront, CodeDeploy)
+- Docker, GitHub Actions
 
-```javascript
-// WebSocket 연결 예시
-const socket = new WebSocket('wss://api.example.com');
+## Certifications
+- 프로그래밍기능사 (2024)
+- 정보처리산업기사 (2025)
 
-socket.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  updateCollaborativeDocument(data);
-};
-```
+## Awards
+- 제 27회 앱잼 해커톤 - 최우수상(1위)
+  - 알파코 디지털새싹 캠프, SK플래닛 주관 생활정보 분야 최우수상
+- 2024 광주광역교육청 고등학생 AI 미니 해커톤 - 대상(1위)
+  - 광주광역시교육청, 광주과학기술원 주관 가상 캐릭터 생성 분야 대상
+- 2024 SW 동행 데모데이 - 장려상
+  - 과학기술정보통신부, 한국과학창의재단 주관 SW 동행 프로젝트 장려상
+- 2025 SW 마이스터고 연합 해커톤 - 인기상(5위)
+  - 대구소프트웨어마이스터고등학교 주관 대구소프트웨어마이스고교장상 수상
+- 2025 빛가람 에너지밸리 SW 작품 경진대 - 우수상(3위)
+  - 한전 KDN 주관 SW 경진대회 우수상
 
-[//]: # (## 자격증 &#40;Certifications&#41;)
-
-[//]: # ()
-[//]: # (- AWS Certified Solutions Architect - Associate &#40;2022&#41;)
-
-[//]: # (- 정보처리기사 &#40;Engineer Information Processing, 2019&#41;)
+## Education
+- 광주소프트웨어마이스터고등학교 8기(2024년 3월 ~ 현재)
 
