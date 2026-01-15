@@ -40,4 +40,14 @@ export default defineConfig({
     },
     react({ include: /\.(jsx|js|mdx|md|tsx|ts)$/ }),
   ],
+  preview: {
+    host: '0.0.0.0',
+    port: 4173,
+    strictPort: false,
+    allowedHosts: ['amond-server.kro.kr', 'localhost'],
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+  },
 })
