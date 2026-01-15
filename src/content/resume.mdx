@@ -1,10 +1,12 @@
+import Footnote from '../components/Footnote'
+
 # 김태은
 
 **Backend Engineer** | 010-2529-4044 | snowykte0426@naver.com | [GitHub](https://github.com/snowykte0426) | [LinkedIn](https://linkedin.com/in/김태은) | [Portfolio](https://amondbabaro.notion.site/2d78f98f33108023a803fb1bf788d0ff)
 
 ---
 
-지속가능한 코드베이스를 만들며 협업과 성장에 기여하는 것을 즐깁니다.
+지속가능한 코드베이스를 만들며 협업과 성장에 기여하는 것을 즐깁니다. <br />
 모든 일에 오너십을 가지고 책임감 있게 몰입하여 결과를 만듭니다.
 
 ## Project Experience
@@ -14,10 +16,15 @@
 
 광주소프트웨어마이스터고등학교의 신입생 입학 지원 시스템입니다. <br />
 기존에 수기로 진행되던 입학 지원 절차를 전산화하는 서비스로, <br />
-실 사용자 1800+명[^1], 매년 변경되는 입학 전형 기준에 유연하게 대응할 수 있도록 설계되었습니다.
+실 사용자 1800+명<Footnote>Google Analytics 기준</Footnote>, 매년 변경되는 입학 전형 기준에 유연하게 대응할 수 있도록 설계되었습니다.
 
-#### 2026학년도 신입생 입학 지원 시스템 개발 및 운영/유지보수
--
+#### 2026 학년도 신입생 입학 지원 시스템 개발 및 운영/유지보수
+- 2026 학년도 입학 전형 기준에서 변경된 부분을 분석하고, 이를 반영하기 위한 시스템 수정 작업 수행
+- AWS CodeDeploy를 활용한 무중단 배포 파이프라인 구축 및 운영
+- AWS 인프라 관리 및 최적화 작업 진행(<b>$518.18에서 $265.16으로 약 48.8%</b> 비용 절감)
+    - 기존에 S3 버킷에 정적 파일을 저장하던 방식을 CloudFront로 전환하여 콘텐츠 전송 속도 향상 및 네트워크 비용 절감
+    - 서버 인스턴스 패밀리를 `t3` -> `t4g`로 전환하여 비용 절감 및 성능 향상
+- 기존에 서버 애플리케이션에서 처리하던 성적계산 로직을 Golang 기반 AWS Lambda로 이전하여 입학 전형 일정이 아닐 동안 서버 인스턴스 비용 발생 문제 해결 및 클라이언트 요청에 대한 응답 속도 향상
 
 **주요 기술**: React, TypeScript, Next.js, Node.js, PostgreSQL, AWS
 
@@ -91,4 +98,3 @@ socket.onmessage = (event) => {
 
 [//]: # (- 정보처리기사 &#40;Engineer Information Processing, 2019&#41;)
 
-[^1]: Google Analytics 기준
