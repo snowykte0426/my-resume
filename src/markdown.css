@@ -1,0 +1,310 @@
+/* MDX Content Wrapper */
+.mdx-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Headings */
+.mdx-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.3rem;
+}
+
+.mdx-content h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.3rem;
+}
+
+.mdx-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.mdx-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Anchor links for headings */
+.mdx-content .anchor-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mdx-content .anchor-link:hover {
+  opacity: 0.8;
+}
+
+/* Paragraphs and text */
+.mdx-content p {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.mdx-content strong {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mdx-content em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mdx-content small {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Lists */
+.mdx-content ul,
+.mdx-content ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.mdx-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Task lists (GFM) */
+.mdx-content input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.mdx-content li:has(input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.5rem;
+}
+
+/* Tables (GFM) */
+.mdx-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.mdx-content th {
+  background-color: rgba(100, 108, 255, 0.1);
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mdx-content td {
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mdx-content tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Links */
+.mdx-content a {
+  color: #646cff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.mdx-content a:hover {
+  color: #535bf2;
+}
+
+/* Code blocks */
+.mdx-content pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mdx-content code {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Inline code */
+.mdx-content :not(pre) > code {
+  background-color: rgba(100, 108, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Blockquotes */
+.mdx-content blockquote {
+  border-left: 4px solid #646cff;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+/* Horizontal rule */
+.mdx-content hr {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+/* Images */
+.mdx-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Footnotes (GFM) */
+.mdx-content .footnotes {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mdx-content .footnotes ol {
+  padding-left: 1.5rem;
+}
+
+/* Strikethrough (GFM) */
+.mdx-content del {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .mdx-content p,
+  .mdx-content li {
+    color: #213547;
+  }
+
+  .mdx-content strong {
+    color: #000;
+  }
+
+  .mdx-content em {
+    color: #555;
+  }
+
+  .mdx-content small {
+    color: #666;
+  }
+
+  .mdx-content h1,
+  .mdx-content h2 {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .mdx-content th {
+    background-color: rgba(100, 108, 255, 0.08);
+  }
+
+  .mdx-content td,
+  .mdx-content th {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .mdx-content tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  .mdx-content pre {
+    background-color: #f5f5f5;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .mdx-content :not(pre) > code {
+    background-color: rgba(100, 108, 255, 0.08);
+  }
+
+  .mdx-content blockquote {
+    color: #555;
+  }
+
+  .mdx-content hr {
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .mdx-content .footnotes {
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #666;
+  }
+}
+
+/* Print styles for resume */
+@media print {
+  .mdx-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .mdx-content a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .mdx-content a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .mdx-content pre {
+    page-break-inside: avoid;
+  }
+
+  .mdx-content h1, .mdx-content h2, .mdx-content h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mdx-content {
+    padding: 1rem;
+  }
+
+  .mdx-content h1 {
+    font-size: 2rem;
+  }
+
+  .mdx-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .mdx-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .mdx-content table {
+    font-size: 0.875rem;
+  }
+
+  .mdx-content th,
+  .mdx-content td {
+    padding: 0.5rem;
+  }
+}
