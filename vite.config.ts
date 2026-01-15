@@ -7,22 +7,21 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     {
       enforce: 'pre',
       ...mdx({
         remarkPlugins: [
-          remarkGfm,      // GitHub Flavored Markdown
-          remarkMath,     // Math notation
+          remarkGfm,
+          remarkMath,
         ],
         rehypePlugins: [
-          rehypeSlug,     // Add IDs to headings
+          rehypeSlug,
           [
             rehypeAutolinkHeadings,
             {
-              behavior: 'wrap',  // Wrap heading text with link
+              behavior: 'wrap',
               properties: {
                 className: ['anchor-link'],
               },
@@ -31,8 +30,8 @@ export default defineConfig({
           [
             rehypePrettyCode,
             {
-              theme: 'github-dark-dimmed',  // Choose theme
-              keepBackground: false,         // Use CSS for background
+              theme: 'github-dark-dimmed',
+              keepBackground: false,
             },
           ],
         ],
@@ -44,7 +43,7 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 4173,
     strictPort: false,
-    allowedHosts: ['amond-server.kro.kr', 'localhost'],
+    allowedHosts: ['amond-server.kro.kr', 'localhost', 'kimtaeeun.site'],
   },
   server: {
     host: '0.0.0.0',
