@@ -22,7 +22,7 @@ docker-compose logs -f
 docker-compose down
 ```
 
-웹사이트는 http://localhost 에서 확인할 수 있습니다.
+웹사이트는 http://localhost:8080 에서 확인할 수 있습니다.
 
 ### Docker 직접 사용
 
@@ -33,7 +33,7 @@ docker build -t my-resume:latest .
 # 컨테이너 실행
 docker run -d \
   --name my-resume \
-  -p 80:80 \
+  -p 8080:4173 \
   --restart unless-stopped \
   my-resume:latest
 
@@ -47,18 +47,18 @@ docker rm my-resume
 
 ## 포트 변경
 
-기본 포트는 80입니다. 다른 포트를 사용하려면:
+기본 외부 포트는 8080입니다 (Vite preview는 4173 포트 사용). 다른 포트를 사용하려면:
 
 ### Docker Compose
 `docker-compose.yml` 파일에서 포트를 수정:
 ```yaml
 ports:
-  - "8080:80"  # 호스트:컨테이너
+  - "3000:4173"  # 호스트:컨테이너
 ```
 
 ### Docker 직접 사용
 ```bash
-docker run -d -p 8080:80 my-resume:latest
+docker run -d -p 3000:4173 my-resume:latest
 ```
 
 ## 프로덕션 배포
@@ -71,7 +71,7 @@ PORT=80
 NODE_ENV=production
 ```
 
-### 2. HTTPS 설정 (Nginx Proxy 사용)
+### 2. HTTPS 설정 (리버스 프록시 사용)
 
 실제 도메인에서 HTTPS를 사용하려면 Nginx Proxy Manager나 Traefik 같은 리버스 프록시를 사용하세요.
 
@@ -84,7 +84,7 @@ services:
     build: .
     container_name: my-resume
     expose:
-      - "80"
+      - "4173"
     networks:
       - proxy-network
 
@@ -136,14 +136,6 @@ az container create \
 doctl apps create --spec .do/app.yaml
 ```
 
-## Health Check
-
-컨테이너는 자동으로 헬스체크를 수행합니다:
-```bash
-# 수동 헬스체크
-curl http://localhost/health
-```
-
 ## 문제 해결
 
 ### 빌드 실패
@@ -158,10 +150,10 @@ docker build --no-cache -t my-resume:latest .
 ### 포트 충돌
 ```bash
 # 사용 중인 포트 확인
-sudo lsof -i :80
+sudo lsof -i :8080
 
 # 또는 다른 포트 사용
-docker run -p 8080:80 my-resume:latest
+docker run -p 9000:4173 my-resume:latest
 ```
 
 ### 로그 확인
@@ -184,14 +176,14 @@ docker restart my-resume
 
 ## 최적화
 
-### 이미지 크기 줄이기
-현재 멀티 스테이지 빌드를 사용하여 최종 이미지 크기를 최소화했습니다.
+### 이미지 크기
+Node.js Alpine 이미지를 사용하여 이미지 크기를 최소화했습니다.
 
 ```bash
 # 이미지 크기 확인
 docker images my-resume
 
-# 예상 크기: ~40MB (nginx:alpine 기반)
+# 예상 크기: ~200-300MB (node:20-alpine 기반)
 ```
 
 ### 빌드 속도 향상
@@ -227,7 +219,7 @@ docker-compose up -d --build
 docker build -t my-resume:latest .
 docker stop my-resume
 docker rm my-resume
-docker run -d -p 80:80 --name my-resume my-resume:latest
+docker run -d -p 8080:4173 --name my-resume my-resume:latest
 ```
 
 ## 백업
