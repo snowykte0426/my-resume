@@ -39,6 +39,25 @@ export default defineConfig({
     },
     react({ include: /\.(jsx|js|mdx|md|tsx|ts)$/ }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor'
+            }
+            if (id.includes('@mdx-js')) {
+              return 'mdx-vendor'
+            }
+          }
+        },
+      },
+    },
+    cssCodeSplit: true,
+    cssMinify: true,
+    chunkSizeWarningLimit: 1000,
+  },
   preview: {
     host: '0.0.0.0',
     port: 4173,
