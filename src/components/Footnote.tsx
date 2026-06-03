@@ -1,7 +1,14 @@
- import { useState, useId, createContext, useContext, useMemo, useRef } from 'react'
+import { useState, useId, createContext, useContext, useMemo, useRef, useEffect } from 'react'
 import './Footnote.css'
 
-const FootnoteContext = createContext<{ getNumber: (id: string) => number } | null>(null)
+interface FootnoteApi {
+  getNumber: (id: string) => number
+  register: (number: number, content: React.ReactNode) => void
+  unregister: (number: number) => void
+}
+
+const FootnoteApiContext = createContext<FootnoteApi | null>(null)
+const FootnoteItemsContext = createContext<[number, React.ReactNode][]>([])
 
 interface FootnoteProviderProps {
   children: React.ReactNode
@@ -10,21 +17,41 @@ interface FootnoteProviderProps {
 export function FootnoteProvider({ children }: FootnoteProviderProps) {
   const counterRef = useRef(0)
   const idMapRef = useRef<Map<string, number>>(new Map())
+  const [footnotes, setFootnotes] = useState<Map<number, React.ReactNode>>(new Map())
 
-  const value = useMemo(() => ({
+  const api = useMemo<FootnoteApi>(() => ({
     getNumber: (id: string) => {
       if (!idMapRef.current.has(id)) {
         counterRef.current += 1
         idMapRef.current.set(id, counterRef.current)
       }
       return idMapRef.current.get(id)!
-    }
+    },
+    register: (number, content) => setFootnotes((prev) => {
+      if (prev.get(number) === content) return prev
+      const next = new Map(prev)
+      next.set(number, content)
+      return next
+    }),
+    unregister: (number) => setFootnotes((prev) => {
+      if (!prev.has(number)) return prev
+      const next = new Map(prev)
+      next.delete(number)
+      return next
+    }),
   }), [])
 
+  const items = useMemo(
+    () => [...footnotes.entries()].sort((a, b) => a[0] - b[0]),
+    [footnotes],
+  )
+
   return (
-    <FootnoteContext.Provider value={value}>
-      {children}
-    </FootnoteContext.Provider>
+    <FootnoteApiContext.Provider value={api}>
+      <FootnoteItemsContext.Provider value={items}>
+        {children}
+      </FootnoteItemsContext.Provider>
+    </FootnoteApiContext.Provider>
   )
 }
 
@@ -35,10 +62,16 @@ interface FootnoteProps {
 export function Footnote({ children }: FootnoteProps) {
   const [isVisible, setIsVisible] = useState(false)
   const reactId = useId()
-  const context = useContext(FootnoteContext)
+  const api = useContext(FootnoteApiContext)
 
-  // Context가 있으면 숫자 번호 사용, 없으면 React ID 사용
-  const id = context ? context.getNumber(reactId) : reactId
+  const number = api ? api.getNumber(reactId) : null
+  const id = number ?? reactId
+
+  useEffect(() => {
+    if (!api || number == null) return
+    api.register(number, children)
+    return () => api.unregister(number)
+  }, [api, number, children])
 
   return (
     <span className="inline-footnote">
@@ -59,6 +92,24 @@ export function Footnote({ children }: FootnoteProps) {
         </span>
       )}
     </span>
+  )
+}
+
+export function FootnoteList() {
+  const items = useContext(FootnoteItemsContext)
+  if (items.length === 0) return null
+
+  return (
+    <section className="footnote-list" aria-label="각주">
+      <h2>각주</h2>
+      <ol>
+        {items.map(([number, content]) => (
+          <li key={number} value={number}>
+            {content}
+          </li>
+        ))}
+      </ol>
+    </section>
   )
 }
 

@@ -399,29 +399,33 @@
   color: #666;
 }
 
-/* Print styles for resume */
+@page {
+  margin: 0;
+}
+
 @media print {
+  html,
+  body,
+  #root,
+  .mdx-content,
+  .mdx-content * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
   .mdx-content {
-    max-width: none;
-    padding: 0;
-  }
-
-  .mdx-content a {
-    color: #000;
-    text-decoration: none;
-  }
-
-  .mdx-content a[href]:after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.6cm 1.6cm 2cm;
   }
 
   .mdx-content pre {
     page-break-inside: avoid;
   }
 
-  .mdx-content h1, .mdx-content h2, .mdx-content h3 {
+  .mdx-content h1,
+  .mdx-content h2,
+  .mdx-content h3 {
     page-break-after: avoid;
   }
 }
