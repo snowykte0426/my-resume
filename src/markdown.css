@@ -430,7 +430,6 @@
   }
 }
 
-/* PDF 직접 내보내기 시 — 내용이 너무 꽉 차 보이지 않도록 여백을 넉넉히 */
 .pdf-exporting .mdx-content {
   max-width: 800px;
   margin: 0 auto;

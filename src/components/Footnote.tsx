@@ -102,13 +102,14 @@ export function FootnoteList() {
   return (
     <section className="footnote-list" aria-label="각주">
       <h2>각주</h2>
-      <ol>
+      <ul className="footnote-items">
         {items.map(([number, content]) => (
-          <li key={number} value={number}>
-            {content}
+          <li key={number}>
+            <span className="footnote-item-marker">{number}.</span>
+            <span className="footnote-item-text">{content}</span>
           </li>
         ))}
-      </ol>
+      </ul>
     </section>
   )
 }

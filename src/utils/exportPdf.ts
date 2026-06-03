@@ -30,7 +30,7 @@ export async function exportResumePdf(): Promise<void> {
         scrollY: 0,
       },
       jsPDF: { unit: 'mm', format: 'a3', orientation: 'portrait' as const },
-      pagebreak: { mode: ['css', 'legacy'] },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
     }
 
     await html2pdf().set(options).from(element).save()

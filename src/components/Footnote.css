@@ -117,14 +117,26 @@
   padding: 0;
 }
 
-.footnote-list ol {
+.footnote-list .footnote-items {
   margin: 0;
-  padding-left: 1.5rem;
+  padding: 0;
+  list-style: none;
 }
 
-.footnote-list li {
-  margin-bottom: 0.35rem;
-  line-height: 1.45;
+.footnote-list .footnote-items li {
+  display: flex;
+  gap: 0.45em;
+  margin: 0 0 0.4rem;
+  line-height: 1.5;
+}
+
+.footnote-list .footnote-item-marker {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.footnote-list .footnote-item-text {
+  flex: 1 1 auto;
 }
 
 @media print {
