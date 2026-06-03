@@ -103,6 +103,28 @@
 
 .footnote-list {
   display: none;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+  font-size: 0.85rem;
+  page-break-inside: avoid;
+}
+
+.footnote-list h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem;
+  border: none;
+  padding: 0;
+}
+
+.footnote-list ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.footnote-list li {
+  margin-bottom: 0.35rem;
+  line-height: 1.45;
 }
 
 @media print {
@@ -112,27 +134,13 @@
 
   .footnote-list {
     display: block;
-    margin-top: 2.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid currentColor;
-    font-size: 0.85rem;
-    page-break-inside: avoid;
   }
+}
 
-  .footnote-list h2 {
-    font-size: 1.1rem;
-    margin: 0 0 0.6rem;
-    border: none;
-    padding: 0;
-  }
+.pdf-exporting .footnote-tooltip {
+  display: none;
+}
 
-  .footnote-list ol {
-    margin: 0;
-    padding-left: 1.5rem;
-  }
-
-  .footnote-list li {
-    margin-bottom: 0.35rem;
-    line-height: 1.45;
-  }
+.pdf-exporting .footnote-list {
+  display: block;
 }

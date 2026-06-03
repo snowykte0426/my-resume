@@ -430,6 +430,23 @@
   }
 }
 
+/* PDF 직접 내보내기 시 — 내용이 너무 꽉 차 보이지 않도록 여백을 넉넉히 */
+.pdf-exporting .mdx-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 3.5rem;
+}
+
+.pdf-exporting .mdx-content pre {
+  page-break-inside: avoid;
+}
+
+.pdf-exporting .mdx-content h1,
+.pdf-exporting .mdx-content h2,
+.pdf-exporting .mdx-content h3 {
+  page-break-after: avoid;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .mdx-content {

@@ -32,6 +32,22 @@
   transition: all 0.3s ease;
 }
 
+.print-button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+  transform: none;
+}
+
+.print-spinner {
+  animation: print-spin 0.8s linear infinite;
+}
+
+@keyframes print-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Light mode styles */
 [data-theme='light'] .print-button {
   background-color: rgba(255, 255, 255, 0.8);
