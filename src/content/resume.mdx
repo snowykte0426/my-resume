@@ -19,11 +19,33 @@ import Metric from '../components/Metric'
 - [2026.05.28 | eclipse-collections Java 8 Map compute* 메서드 단일 조회 최적화 및 동기화 원자성 보장](https://github.com/eclipse-collections/eclipse-collections/pull/1947)
 - [2026.05.30 | mockk value class nullable inner value null packRef 버그 수정](https://github.com/mockk/mockk/pull/1532)
 - [2026.06.03 | mockk clearAllMocks 플래그별 mock 타입 격리 버그 수정](https://github.com/mockk/mockk/pull/1533)
+- [2026.07.01 | mockk JVM 중첩 value class 매처 및 캡처 버그 수정](https://github.com/mockk/mockk/pull/1539)
 
 ## Project
 
+### DataGSM | Backend / Cloud Leader<Footnote>총 7명 규모</Footnote>
+**2025년 11월 - 2026 7월 | team.the-moment**
+
+교내 서비스를 위한 OpenAPI 및 OAuth 인증 시스템으로, 재학생들의 요청으로 시작되어 현재 <Metric>일 5000+건의 요청을 처리</Metric>하고 있습니다.
+
+#### 아키텍처 설계
+- 초기 기획부터 참여, 학생 요구사항 → 서비스 설계 반영
+- 멀티모듈 구조 (인증/공통/API) 설계로 확장성 및 유지보수성 향상
+- 재학생·동아리·프로젝트 정보 제공 OpenAPI 설계 및 문서화
+- 멀티모듈 설계를 응용한 분산 환경 구축으로 <Metric>업타임 99.8% 달성</Metric>
+### OAuth 2.1 인증 서버 구현
+- RFC 6749와 RFC 7636 표준을 철저히 준수하여 구현
+- 세션 기반의 안전한 인증 플로우 구현을 통해 CSRF, 코드 재사용 공격 방어
+#### OpenAPI SDK for Java/Kotlin
+- API 호출 추상화로 개발자 경험 향상
+#### 오픈소스 문화 및 리더십
+- 오픈소스 프로젝트로서 가치 창출
+- Gemini Code Assistant 코드 리뷰봇 도입을 통한 자동화 (<Metric>평균 리뷰 소요 시간 1일 → 3시간</Metric>)
+
+---
+
 ### Hello, GSM | Server / Cloud Engineer<Footnote>총 17명 규모</Footnote>
-**2025년 4월 - 2025년 11월 | team.the-moment**
+**2025년 4월 - 2026년 8월 | team.the-moment**
 
 광주소프트웨어마이스터고등학교 신입생 입학 지원 시스템입니다. <br />
 수기 입학 절차를 전산화하여 실 사용자 <Metric>1800+명</Metric><Footnote>Google Analytics 기준</Footnote>이 이용하고 있으며, 매년 변경되는 입학 전형 기준에 유연하게 대응합니다.
@@ -81,29 +103,14 @@ import Metric from '../components/Metric'
 2025학년도의 성공적인 운영으로 익년에도 사용되기로 결정되어 프로젝트를 이어나가게 되었습니다, <br />
 전산화를 통해 <Metric>평가 절차를 6개월 → 2주 이내로 단축</Metric>하는데 성공하였습니다.
 
----
-
-### DataGSM | Backend / Cloud Leader<Footnote>총 7명 규모</Footnote>
-**2025년 11월 - 현재 | team.the-moment**
-
-교내 서비스를 위한 OpenAPI 및 OAuth 인증 시스템으로, 재학생들의 요청으로 시작되어 현재 <Metric>일 5000+건의 요청을 처리</Metric>하고 있습니다.
-
-#### 아키텍처 설계
-- 초기 기획부터 참여, 학생 요구사항 → 서비스 설계 반영
-- 멀티모듈 구조 (인증/공통/API) 설계로 확장성 및 유지보수성 향상
-- 재학생·동아리·프로젝트 정보 제공 OpenAPI 설계 및 문서화
-### OAuth 2.1 인증 서버 구현
-- RFC 6749와 RFC 7636 표준을 철저히 준수하여 구현
-- 세션 기반의 안전한 인증 플로우 구현을 통해 CSRF, 코드 재사용 공격 방어
-#### OpenAPI SDK for Java/Kotlin
-- API 호출 추상화로 개발자 경험 향상
-#### 오픈소스 문화 및 리더십
-- 오픈소스 프로젝트로서 가치 창출
-- Gemini Code Assistant 코드 리뷰봇 도입을 통한 자동화 (<Metric>평균 리뷰 소요 시간 1일 → 3시간</Metric>)
-
 ## Experience
+#### [전사 LLM 하네스 통합 관리 시스템](https://github.com/themoment-team/themoment-ai-harness-sync)
+- GitHub App을 이용해 등록된 프로젝트들에 LLM 하네스 변경사항을 즉시 전파하는 시스템 구축
+- <Metric>약 19개에 달하는 중복 관리 지점을 1개의 단일 관리 지점으로 통합</Metric>
+
 #### [QueryDSL MySQL JSON 함수 확장](https://github.com/snowykte0426/querydsl-mysql-json-query-support)
 - MySQL JSON 함수 타입 안전성 제공, Spring Data JPA 호환
+- <Metric>누적 다운로드 4500+회</Metric>, JSON 칼럼에 대한 통합을 강화
 
 #### [Spring Boot 유틸리티 라이브러리](https://github.com/snowykte0426/peanut-butter)
 - 필드 동등성 검사, Kotlin 비동기 로깅, TimeZone 설정 등 모듈화
