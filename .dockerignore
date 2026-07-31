@@ -62,3 +62,6 @@ docs
 tmp
 temp
 *.tmp
+# Deploy tooling
+deploy
+deployspec.yml

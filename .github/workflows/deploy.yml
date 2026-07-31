@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy over SSH
+        uses: 8G4B/GSM-SV-Deploy@v1.2.1
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          port: 22
+          user: ${{ secrets.DEPLOY_USER }}
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+          source_path: .
+          target_path: ${{ secrets.DEPLOY_TARGET_PATH }}
+          deployspec_path: deployspec.yml
