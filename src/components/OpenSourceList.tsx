@@ -28,8 +28,6 @@ export function OpenSourceList() {
       {openSourceProjects.map((project) => {
         const additions = project.contributions.reduce((sum, c) => sum + c.additions, 0)
         const deletions = project.contributions.reduce((sum, c) => sum + c.deletions, 0)
-        const dates = project.contributions.map((c) => c.date)
-        const period = dates.length > 1 ? `${dates[dates.length - 1]} – ${dates[0]}` : dates[0]
 
         return (
           <section className="oss-project" key={`${project.owner}/${project.name}`}>
@@ -42,8 +40,7 @@ export function OpenSourceList() {
             </h2>
 
             <p className="oss-project-meta">
-              {project.contributions.length}건 · <DiffStat additions={additions} deletions={deletions} /> ·{' '}
-              {period}
+              <DiffStat additions={additions} deletions={deletions} />
             </p>
 
             <p className="oss-project-description">{project.description}</p>
