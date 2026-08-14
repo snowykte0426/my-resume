@@ -25,25 +25,17 @@ export function OpenSourceList() {
 
       <h1>Open Source Contributions</h1>
 
-      {openSourceProjects.map((project) => {
-        const additions = project.contributions.reduce((sum, c) => sum + c.additions, 0)
-        const deletions = project.contributions.reduce((sum, c) => sum + c.deletions, 0)
+      {openSourceProjects.map((project) => (
+        <section className="oss-project" key={`${project.owner}/${project.name}`}>
+          <h2>
+            <a href={project.url} target="_blank" rel="noreferrer noopener">
+              <PlatformIcon platform={project.platform} size={17} />
+              <span className="oss-project-owner">{project.owner}/</span>
+              {project.name}
+            </a>
+          </h2>
 
-        return (
-          <section className="oss-project" key={`${project.owner}/${project.name}`}>
-            <h2>
-              <a href={project.url} target="_blank" rel="noreferrer noopener">
-                <PlatformIcon platform={project.platform} size={17} />
-                <span className="oss-project-owner">{project.owner}/</span>
-                {project.name}
-              </a>
-            </h2>
-
-            <p className="oss-project-meta">
-              <DiffStat additions={additions} deletions={deletions} />
-            </p>
-
-            <p className="oss-project-description">{project.description}</p>
+          <p className="oss-project-description">{project.description}</p>
 
             <ol className="oss-contributions">
               {project.contributions.map((contribution) => (
