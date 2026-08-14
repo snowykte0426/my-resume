@@ -1,0 +1,275 @@
+.oss-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 4rem;
+  text-align: left;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.oss-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #646cff;
+  text-decoration: none;
+  margin-bottom: 1.2rem;
+}
+
+.oss-back:hover {
+  color: #535bf2;
+}
+
+.oss-back-bottom {
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.oss-page h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 2.5rem;
+  line-height: 1.2;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.3rem;
+}
+
+.oss-project {
+  margin-bottom: 2.5rem;
+}
+
+.oss-project h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.oss-project h2 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.oss-project h2 a:hover {
+  color: #646cff;
+}
+
+.oss-project-owner {
+  font-weight: 400;
+  opacity: 0.55;
+}
+
+.oss-project h2 .platform-icon {
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.oss-project-meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-variant-numeric: tabular-nums;
+}
+
+.oss-project-description {
+  margin: 0.5rem 0 1.3rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.oss-contributions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.oss-contribution {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.oss-date {
+  flex: 0 0 5.2rem;
+  padding-top: 0.1rem;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.oss-contribution-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.oss-contribution-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}
+
+.oss-contribution-title:hover {
+  color: #646cff;
+}
+
+.oss-ref {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  margin-left: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.42);
+  white-space: nowrap;
+}
+
+.oss-ref .platform-icon {
+  opacity: 0.8;
+}
+
+.oss-contribution-summary {
+  margin: 0.25rem 0 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.oss-contribution-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 0.79rem;
+}
+
+.oss-files {
+  color: rgba(255, 255, 255, 0.4);
+  font-variant-numeric: tabular-nums;
+}
+
+.diffstat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.diffstat-added {
+  color: #4ade80;
+}
+
+.diffstat-deleted {
+  color: #f87171;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .oss-page {
+    color: #213547;
+  }
+
+  .oss-page h1 {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .oss-project-meta {
+    color: #777;
+  }
+
+  .oss-project-description,
+  .oss-contribution-summary {
+    color: #4a5568;
+  }
+
+  .oss-contribution {
+    border-top-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .oss-date,
+  .oss-ref,
+  .oss-files {
+    color: #888;
+  }
+
+  .oss-contribution-title {
+    color: #213547;
+  }
+
+  .diffstat-added {
+    color: #16a34a;
+  }
+
+  .diffstat-deleted {
+    color: #dc2626;
+  }
+}
+
+[data-theme='light'] .oss-page {
+  color: #213547;
+}
+
+[data-theme='light'] .oss-page h1 {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .oss-project-meta {
+  color: #777;
+}
+
+[data-theme='light'] .oss-project-description,
+[data-theme='light'] .oss-contribution-summary {
+  color: #4a5568;
+}
+
+[data-theme='light'] .oss-contribution {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .oss-date,
+[data-theme='light'] .oss-ref,
+[data-theme='light'] .oss-files {
+  color: #888;
+}
+
+[data-theme='light'] .oss-contribution-title {
+  color: #213547;
+}
+
+[data-theme='light'] .diffstat-added {
+  color: #16a34a;
+}
+
+[data-theme='light'] .diffstat-deleted {
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .oss-page {
+    padding: 0.8rem 1rem 3rem;
+  }
+
+  .oss-page h1 {
+    font-size: 1.7rem;
+  }
+
+  .oss-project h2 {
+    font-size: 1.15rem;
+  }
+
+  .oss-contribution {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .oss-date {
+    flex: none;
+    padding-top: 0;
+  }
+}
