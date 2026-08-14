@@ -37,38 +37,37 @@ export function OpenSourceList() {
 
           <p className="oss-project-description">{project.description}</p>
 
-            <ol className="oss-contributions">
-              {project.contributions.map((contribution) => (
-                <li className="oss-contribution" key={contribution.url}>
-                  <time className="oss-date">{contribution.date}</time>
-                  <div className="oss-contribution-body">
-                    <a
-                      className="oss-contribution-title"
-                      href={contribution.url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      {contribution.title}
-                      <span className="oss-ref">
-                        <PlatformIcon platform={project.platform} size={12} />
-                        {contribution.ref}
-                      </span>
-                    </a>
-                    <p className="oss-contribution-summary">{contribution.summary}</p>
-                    <p className="oss-contribution-stats">
-                      <DiffStat
-                        additions={contribution.additions}
-                        deletions={contribution.deletions}
-                      />
-                      <span className="oss-files">{contribution.changedFiles}개 파일</span>
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        )
-      })}
+          <ol className="oss-contributions">
+            {project.contributions.map((contribution) => (
+              <li className="oss-contribution" key={contribution.url}>
+                <time className="oss-date">{contribution.date}</time>
+                <div className="oss-contribution-body">
+                  <a
+                    className="oss-contribution-title"
+                    href={contribution.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    {contribution.title}
+                    <span className="oss-ref">
+                      <PlatformIcon platform={project.platform} size={12} />
+                      {contribution.ref}
+                    </span>
+                  </a>
+                  <p className="oss-contribution-summary">{contribution.summary}</p>
+                  <p className="oss-contribution-stats">
+                    <DiffStat
+                      additions={contribution.additions}
+                      deletions={contribution.deletions}
+                    />
+                    <span className="oss-files">{contribution.changedFiles}개 파일</span>
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
 
       <a className="oss-back oss-back-bottom" href="#/">
         ← 이력서로 돌아가기

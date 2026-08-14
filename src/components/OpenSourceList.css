@@ -66,15 +66,8 @@
   flex-shrink: 0;
 }
 
-.oss-project-meta {
-  margin: 0.3rem 0 0;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-variant-numeric: tabular-nums;
-}
-
 .oss-project-description {
-  margin: 0.5rem 0 1.3rem;
+  margin: 0.4rem 0 1.3rem;
   font-size: 0.9rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.65);
@@ -179,10 +172,6 @@
     border-bottom-color: rgba(0, 0, 0, 0.1);
   }
 
-  .oss-project-meta {
-    color: #777;
-  }
-
   .oss-project-description,
   .oss-contribution-summary {
     color: #4a5568;
@@ -217,10 +206,6 @@
 
 [data-theme='light'] .oss-page h1 {
   border-bottom-color: rgba(0, 0, 0, 0.1);
-}
-
-[data-theme='light'] .oss-project-meta {
-  color: #777;
 }
 
 [data-theme='light'] .oss-project-description,
