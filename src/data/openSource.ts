@@ -132,6 +132,26 @@ export const openSourceProjects: OpenSourceProject[] = [
     ],
   },
   {
+    name: 'thunderbird-android',
+    owner: 'thunderbird',
+    url: 'https://github.com/thunderbird/thunderbird-android',
+    platform: 'github',
+    description:
+      'Mozilla Thunderbird의 안드로이드 이메일 클라이언트입니다. K-9 Mail을 이어받아 개발되고 있습니다.',
+    contributions: [
+      {
+        date: '2026.08.20',
+        title: '하드웨어 키보드 탭 키로 수신자 입력란을 벗어나지 못하던 버그 수정',
+        summary: '탭 키를 입력란이 가로채면서 포커스가 갇히던 문제를 해결하고, 자동완성 동작을 함께 정리했습니다.',
+        url: 'https://github.com/thunderbird/thunderbird-android/pull/11413',
+        ref: '#11413',
+        additions: 208,
+        deletions: 7,
+        changedFiles: 2,
+      },
+    ],
+  },
+  {
     name: 'eclipse-collections',
     owner: 'eclipse-collections',
     url: 'https://github.com/eclipse-collections/eclipse-collections',
