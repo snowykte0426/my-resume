@@ -240,6 +240,16 @@ export const openSourceProjects: OpenSourceProject[] = [
       'Java 보일러플레이트 코드를 애노테이션으로 대체하는 애노테이션 프로세서입니다. 컴파일 시점에 AST를 직접 조작합니다.',
     contributions: [
       {
+        date: '2026.08.21',
+        title: '빌더 클래스 이름이 애노테이션 이름과 충돌할 때 거부',
+        summary: '생성될 빌더 클래스 이름이 애노테이션 이름과 겹쳐 모호한 코드가 만들어지던 경우를 컴파일 단계에서 막고, 대안을 안내하도록 했습니다.',
+        url: 'https://github.com/projectlombok/lombok/pull/4052',
+        ref: '#4052',
+        additions: 250,
+        deletions: 17,
+        changedFiles: 17,
+      },
+      {
         date: '2026.08.06',
         title: 'JDK 23 Ant 애노테이션 프로세싱 설정 문서 개선',
         summary: 'JDK 23부터 달라진 애노테이션 처리 설정을 빌드 가이드에 반영했습니다.',
