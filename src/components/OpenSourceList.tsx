@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { openSourceProjects } from '../data/openSource'
 import PlatformIcon from './PlatformIcon'
+import ContributionIcon from './ContributionIcon'
 import './OpenSourceList.css'
 
 function DiffStat({ additions, deletions }: { additions: number; deletions: number }) {
@@ -48,12 +49,12 @@ export function OpenSourceList() {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    {contribution.kind === 'issue' && (
-                      <span className="oss-kind">Issue</span>
-                    )}
                     {contribution.title}
                     <span className="oss-ref">
-                      <PlatformIcon platform={project.platform} size={12} />
+                      <ContributionIcon
+                        platform={project.platform}
+                        kind={contribution.kind}
+                      />
                       {contribution.ref}
                     </span>
                   </a>
