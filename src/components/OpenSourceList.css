@@ -110,6 +110,20 @@
   color: #646cff;
 }
 
+.oss-kind {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  vertical-align: 0.1em;
+}
+
 .oss-ref {
   display: inline-flex;
   align-items: center;
@@ -144,6 +158,10 @@
 .oss-files {
   color: rgba(255, 255, 255, 0.4);
   font-variant-numeric: tabular-nums;
+}
+
+.oss-status {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .diffstat {
@@ -183,8 +201,14 @@
 
   .oss-date,
   .oss-ref,
-  .oss-files {
+  .oss-files,
+  .oss-status {
     color: #888;
+  }
+
+  .oss-kind {
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #777;
   }
 
   .oss-contribution-title {
@@ -219,8 +243,14 @@
 
 [data-theme='light'] .oss-date,
 [data-theme='light'] .oss-ref,
-[data-theme='light'] .oss-files {
+[data-theme='light'] .oss-files,
+[data-theme='light'] .oss-status {
   color: #888;
+}
+
+[data-theme='light'] .oss-kind {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #777;
 }
 
 [data-theme='light'] .oss-contribution-title {
