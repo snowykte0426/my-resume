@@ -1,15 +1,26 @@
 export type Platform = 'github' | 'gerrit'
 
-export interface Contribution {
+interface BaseContribution {
   date: string
   title: string
   summary: string
   url: string
   ref: string
+}
+
+export interface CodeContribution extends BaseContribution {
+  kind?: 'pr'
   additions: number
   deletions: number
   changedFiles: number
 }
+
+export interface IssueContribution extends BaseContribution {
+  kind: 'issue'
+  status: string
+}
+
+export type Contribution = CodeContribution | IssueContribution
 
 export interface OpenSourceProject {
   name: string
@@ -209,6 +220,34 @@ export const openSourceProjects: OpenSourceProject[] = [
     description:
       'TypeScript 기반의 Node.js 서버 프레임워크입니다. 데코레이터와 DI 컨테이너를 중심으로 한 모듈 구조를 제공합니다.',
     contributions: [
+      {
+        date: '2026.08.30',
+        title: '셋업 스크립트가 빌드 실패를 감추던 문제 수정',
+        summary: '빌드가 실패해도 출력이 버려진 채 스크립트가 성공으로 끝나던 것을, 실패 시 즉시 중단하도록 고쳤습니다.',
+        url: 'https://github.com/nestjs/nest/pull/17621',
+        ref: '#17621',
+        additions: 26,
+        deletions: 8,
+        changedFiles: 3,
+      },
+      {
+        kind: 'issue',
+        date: '2026.08.30',
+        title: 'WsAdapter가 메시지 파싱 실패를 조용히 삼키는 문제 제보',
+        summary: '커스텀 파서가 던진 예외까지 아무 신호 없이 메시지가 버려지던 동작을 세 갈래 원인으로 나누어 분석했습니다.',
+        url: 'https://github.com/nestjs/nest/issues/17624',
+        ref: '#17624',
+        status: '논의 중 · 분석을 바탕으로 다른 기여자가 수정 PR 개설',
+      },
+      {
+        kind: 'issue',
+        date: '2026.08.30',
+        title: '종료 훅 중복 등록 시 시그널 리스너가 남는 문제 제보',
+        summary: '종료 훅을 두 번 등록하면 먼저 붙은 리스너를 더 이상 떼어낼 수 없어 프로세스에 남던 원인을 짚었습니다.',
+        url: 'https://github.com/nestjs/nest/issues/17623',
+        ref: '#17623',
+        status: '해결됨',
+      },
       {
         date: '2026.02.16',
         title: 'websocket disconnect reason 파라미터 추가',

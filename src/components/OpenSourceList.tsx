@@ -48,6 +48,9 @@ export function OpenSourceList() {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
+                    {contribution.kind === 'issue' && (
+                      <span className="oss-kind">Issue</span>
+                    )}
                     {contribution.title}
                     <span className="oss-ref">
                       <PlatformIcon platform={project.platform} size={12} />
@@ -56,11 +59,17 @@ export function OpenSourceList() {
                   </a>
                   <p className="oss-contribution-summary">{contribution.summary}</p>
                   <p className="oss-contribution-stats">
-                    <DiffStat
-                      additions={contribution.additions}
-                      deletions={contribution.deletions}
-                    />
-                    <span className="oss-files">{contribution.changedFiles}개 파일</span>
+                    {contribution.kind === 'issue' ? (
+                      <span className="oss-status">{contribution.status}</span>
+                    ) : (
+                      <>
+                        <DiffStat
+                          additions={contribution.additions}
+                          deletions={contribution.deletions}
+                        />
+                        <span className="oss-files">{contribution.changedFiles}개 파일</span>
+                      </>
+                    )}
                   </p>
                 </div>
               </li>
