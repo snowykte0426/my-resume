@@ -221,6 +221,16 @@ export const openSourceProjects: OpenSourceProject[] = [
       'TypeScript 기반의 Node.js 서버 프레임워크입니다. 데코레이터와 DI 컨테이너를 중심으로 한 모듈 구조를 제공합니다.',
     contributions: [
       {
+        date: '2026.08.31',
+        title: '웹소켓 컨텍스트에서 메시지 패턴이 두 번 덧붙던 코드 정리',
+        summary: '가드·인터셉터·파이프에 넘어가는 인자 끝에 메시지 패턴이 중복으로 붙던 것을 한 곳으로 모았습니다.',
+        url: 'https://github.com/nestjs/nest/pull/17620',
+        ref: '#17620',
+        additions: 66,
+        deletions: 2,
+        changedFiles: 2,
+      },
+      {
         date: '2026.08.30',
         title: '셋업 스크립트가 빌드 실패를 감추던 문제 수정',
         summary: '빌드가 실패해도 출력이 버려진 채 스크립트가 성공으로 끝나던 것을, 실패 시 즉시 중단하도록 고쳤습니다.',
@@ -237,7 +247,7 @@ export const openSourceProjects: OpenSourceProject[] = [
         summary: '커스텀 파서가 던진 예외까지 아무 신호 없이 메시지가 버려지던 동작을 세 갈래 원인으로 나누어 분석했습니다.',
         url: 'https://github.com/nestjs/nest/issues/17624',
         ref: '#17624',
-        status: '논의 중 · 분석을 바탕으로 다른 기여자가 수정 PR 개설',
+        status: '해결됨 · 분석을 이어받은 다른 기여자의 수정이 병합',
       },
       {
         kind: 'issue',
