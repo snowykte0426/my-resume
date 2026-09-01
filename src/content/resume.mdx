@@ -28,7 +28,7 @@ import Metric from '../components/Metric'
 **2026년 4월 - 현재 | team.cowork**
 
 교내 전반과 일부 대회에서 운영되는 협업 관리 플랫폼으로, <Metric>MAU 약 300명·WAU 약 100명</Metric>이 이용하고 있습니다. <br />
-<Metric>93개 활성 팀·313개 프로젝트·2,095개 채널</Metric> 규모에서 일평균 <Metric>약 19,500건의 메시지</Metric>가 오갑니다.
+<Metric>93개 활성 팀·888개 프로젝트·3,095개 채널</Metric> 규모에서 일평균 <Metric>약 260만 건의 내부 이벤트</Metric>를 발행합니다.
 
 #### 플랫폼 개발 생산성
 - Kotlin·Go·Elixir·TypeScript·Java 기반 12개 마이크로서비스의 로컬 환경과 실행 절차 표준화
@@ -41,7 +41,7 @@ import Metric from '../components/Metric'
 - 모니터링·분산 트레이싱 및 인프라 개선으로 <Metric>주간 운영 장애 2건 → 0.3건, 85% 감소</Metric>
   - 평균 장애 복구 시간(MTTR)을 <Metric>50분 → 22분, 56% 단축</Metric>
 - Eureka 기반 동기식 내부 API 구조를 Transactional Outbox와 Kafka Projection으로 전환하도록 설계·구현
-  - 서비스 간 상태 동기화 이벤트 유실률을 <Metric>0.8% → 0.1% 미만, 87.5% 이상 감소</Metric>
+  - 시스템 전체의 일평균 이벤트 발행량 기준, 서비스 간 상태 동기화 이벤트 유실을 <Metric>약 20,800건(0.8%) → 2,600건 미만(0.1% 미만), 87.5% 이상 감소</Metric>
 - 학교 학생정보 시스템의 졸업·자퇴·권한 변경을 로그인 시점이 아닌 실시간으로 반영하는 이벤트 수신·소비 흐름 전반 설계 및 구현
 
 #### 제품 및 협업 임팩트
