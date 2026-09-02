@@ -151,6 +151,16 @@ export const openSourceProjects: OpenSourceProject[] = [
       'Mozilla Thunderbird의 안드로이드 이메일 클라이언트입니다. K-9 Mail을 이어받아 개발되고 있습니다.',
     contributions: [
       {
+        date: '2026.09.02',
+        title: '메시지 선택 모드에서 상태 표시줄이 검게 덮이던 버그 수정',
+        summary: '메시지를 선택하면 상단 상태 표시줄이 검은 띠로 가려져 시계와 아이콘이 사라지던 문제를 해결했습니다.',
+        url: 'https://github.com/thunderbird/thunderbird-android/pull/11410',
+        ref: '#11410',
+        additions: 31,
+        deletions: 0,
+        changedFiles: 1,
+      },
+      {
         date: '2026.08.25',
         title: '키보드로 고른 수신자 자동완성 항목이 드러나지 않던 문제 수정',
         summary: '키보드로 목록을 넘길 때 어떤 항목이 선택됐는지 보이지 않던 것을, 명암비를 확보한 배경과 외곽선으로 표시하도록 했습니다.',
