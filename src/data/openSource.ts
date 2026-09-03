@@ -257,7 +257,7 @@ export const openSourceProjects: OpenSourceProject[] = [
         summary: '커스텀 파서가 던진 예외까지 아무 신호 없이 메시지가 버려지던 동작을 세 갈래 원인으로 나누어 분석했습니다.',
         url: 'https://github.com/nestjs/nest/issues/17624',
         ref: '#17624',
-        status: '해결됨 · 분석을 이어받은 다른 기여자의 수정이 병합',
+        status: '해결됨',
       },
       {
         kind: 'issue',
