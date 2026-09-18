@@ -330,6 +330,27 @@ export const openSourceProjects: OpenSourceProject[] = [
       },
     ],
   },
+  {
+    name: 'spring-batch',
+    owner: 'spring-projects',
+    url: 'https://github.com/spring-projects/spring-batch',
+    platform: 'github',
+    description:
+      '대용량 데이터를 다루는 배치 애플리케이션을 위한 Spring 프레임워크입니다. 청크 기반 처리와 재시작·건너뛰기 같은 배치 실행 제어를 제공합니다.',
+    contributions: [
+      {
+        date: '2026.09.17',
+        title: 'FlatFileItemReaderBuilder DSL에 컴파일 타임 안전성 도입',
+        summary:
+          '함께 쓸 수 없는 targetType()과 fieldSetMapper()를 동시에 호출하면 실행 시점에야 예외가 나던 것을, 단계별 인터페이스로 나누어 컴파일 단계에서 막도록 했습니다.',
+        url: 'https://github.com/spring-projects/spring-batch/pull/4929',
+        ref: '#4929',
+        additions: 521,
+        deletions: 18,
+        changedFiles: 2,
+      },
+    ],
+  },
 ]
 
 export const totalContributions = openSourceProjects.reduce(
