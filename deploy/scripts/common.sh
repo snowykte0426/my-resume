@@ -4,7 +4,7 @@ set -Eeuo pipefail
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-APP_DIR="${RESUME_DEPLOY_DIR:-${HOME}/deploy/my-resume}"
+APP_DIR="${RESUME_DEPLOY_DIR:-${HOME}/Downloads/my-resume}"
 IMAGE_NAME="${RESUME_IMAGE_NAME:-my-resume}"
 CONTAINER_NAME="${RESUME_CONTAINER_NAME:-my-resume}"
 HOST_BIND="${RESUME_HOST_BIND:-127.0.0.1}"
