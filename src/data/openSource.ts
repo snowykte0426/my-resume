@@ -41,6 +41,16 @@ export const openSourceProjects: OpenSourceProject[] = [
       'Kotlin 전용 모킹 라이브러리로, DSL 기반 API를 통해 코루틴·value class 등 Kotlin 고유 기능을 지원합니다. JVM·Android·Native 멀티플랫폼 타깃을 대상으로 합니다.',
     contributions: [
       {
+        date: '2026.10.20',
+        title: 'Gradle 프로젝트 프로퍼티를 테스트 JVM으로 전달하는 설정 문서 보완',
+        summary: 'README 예제에 테스트 JVM으로 시스템 프로퍼티를 넘기는 설정이 빠져 있어 옵션이 적용되지 않던 것을 바로잡고, 우선순위와 멀티 모듈 적용 위치를 정리했습니다.',
+        url: 'https://github.com/mockk/mockk/pull/1574',
+        ref: '#1574',
+        additions: 25,
+        deletions: 7,
+        changedFiles: 1,
+      },
+      {
         date: '2026.07.02',
         title: '제네릭 value class boxed 타입 파라미터 상한 경계 추론 버그 수정',
         summary: '제네릭 value class의 타입 파라미터 추론이 어긋나 발생하던 오동작을 수정했습니다.',
