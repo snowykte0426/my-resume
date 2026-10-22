@@ -51,6 +51,15 @@ export const openSourceProjects: OpenSourceProject[] = [
         changedFiles: 1,
       },
       {
+        kind: 'issue',
+        date: '2026.10.20',
+        title: '기본 mock 제한 목록이 Map 인터페이스와 일부 구현체를 놓치는 문제 제보',
+        summary: '문서와 달리 기본 설정에는 HashMap만 들어 있어 Map·TreeMap·ConcurrentHashMap의 mock 생성이 막히지 않던 원인을 짚었습니다.',
+        url: 'https://github.com/mockk/mockk/issues/1572',
+        ref: '#1572',
+        status: '해결됨',
+      },
+      {
         date: '2026.07.02',
         title: '제네릭 value class boxed 타입 파라미터 상한 경계 추론 버그 수정',
         summary: '제네릭 value class의 타입 파라미터 추론이 어긋나 발생하던 오동작을 수정했습니다.',
