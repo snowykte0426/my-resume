@@ -60,6 +60,15 @@ export const openSourceProjects: OpenSourceProject[] = [
         status: '해결됨',
       },
       {
+        kind: 'issue',
+        date: '2026.10.20',
+        title: 'mock 제한 검사가 mockk<T>()의 타입 파라미터에만 적용되는 문제 제보',
+        summary: 'mockkClass·@MockK·MockKExtension 등 다른 생성 경로와 추가 인터페이스에서는 제한 대상 클래스도 mock이 만들어지던 원인을 짚었습니다.',
+        url: 'https://github.com/mockk/mockk/issues/1573',
+        ref: '#1573',
+        status: '해결됨',
+      },
+      {
         date: '2026.07.02',
         title: '제네릭 value class boxed 타입 파라미터 상한 경계 추론 버그 수정',
         summary: '제네릭 value class의 타입 파라미터 추론이 어긋나 발생하던 오동작을 수정했습니다.',
