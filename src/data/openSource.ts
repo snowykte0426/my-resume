@@ -41,6 +41,26 @@ export const openSourceProjects: OpenSourceProject[] = [
       'Kotlin 전용 모킹 라이브러리로, DSL 기반 API를 통해 코루틴·value class 등 Kotlin 고유 기능을 지원합니다. JVM·Android·Native 멀티플랫폼 타깃을 대상으로 합니다.',
     contributions: [
       {
+        date: '2026.11.02',
+        title: 'Mockito와 함께 사용 시 dispatcher.jar 리소스 충돌로 Android 테스트 빌드가 실패하는 문제 수정',
+        summary: 'mockk-agent-android와 dexmaker-mockito-inline이 같은 경로에 서로 다른 dispatcher.jar를 두어 테스트 APK 빌드가 실패하던 것을, MockK 쪽 jar를 패키지 경로 아래로 옮겨 두 라이브러리가 함께 동작하도록 했습니다.',
+        url: 'https://github.com/mockk/mockk/pull/1584',
+        ref: '#1584',
+        additions: 8,
+        deletions: 3,
+        changedFiles: 2,
+      },
+      {
+        date: '2026.11.02',
+        title: '반환 타입만 다른 메서드가 계측되지 않아 실제 구현이 호출되는 버그 수정',
+        summary: 'Byte Buddy 메서드 그래프가 반환 타입을 무시해 이름·파라미터 타입이 같은 메서드 중 하나만 계측되던 원인을 찾아, JVM 계층 기준 컴파일러로 각 메서드에 프록시 advice가 적용되도록 했습니다.',
+        url: 'https://github.com/mockk/mockk/pull/1583',
+        ref: '#1583',
+        additions: 68,
+        deletions: 1,
+        changedFiles: 2,
+      },
+      {
         date: '2026.10.20',
         title: 'Gradle 프로젝트 프로퍼티를 테스트 JVM으로 전달하는 설정 문서 보완',
         summary: 'README 예제에 테스트 JVM으로 시스템 프로퍼티를 넘기는 설정이 빠져 있어 옵션이 적용되지 않던 것을 바로잡고, 우선순위와 멀티 모듈 적용 위치를 정리했습니다.',
