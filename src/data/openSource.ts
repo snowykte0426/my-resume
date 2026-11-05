@@ -41,6 +41,16 @@ export const openSourceProjects: OpenSourceProject[] = [
       'Kotlin 전용 모킹 라이브러리로, DSL 기반 API를 통해 코루틴·value class 등 Kotlin 고유 기능을 지원합니다. JVM·Android·Native 멀티플랫폼 타깃을 대상으로 합니다.',
     contributions: [
       {
+        date: '2026.11.05',
+        title: '제네릭 함수 매처의 타입 추론 오류 대응 문서와 JVM 테스트 추가',
+        summary: '제네릭 매처가 Nothing으로 추론되는 컴파일 오류의 원인을 재현하고, 첫 번째 매처에 타입 인자를 명시하는 사용법을 문서화했습니다. ofType·any의 스터빙과 호출 검증을 확인하는 JVM 테스트 2건을 추가했습니다.',
+        url: 'https://github.com/mockk/mockk/pull/1588',
+        ref: '#1588',
+        additions: 78,
+        deletions: 0,
+        changedFiles: 2,
+      },
+      {
         date: '2026.11.02',
         title: 'Mockito와 함께 사용 시 dispatcher.jar 리소스 충돌로 Android 테스트 빌드가 실패하는 문제 수정',
         summary: 'mockk-agent-android와 dexmaker-mockito-inline이 같은 경로에 서로 다른 dispatcher.jar를 두어 테스트 APK 빌드가 실패하던 것을, MockK 쪽 jar를 패키지 경로 아래로 옮겨 두 라이브러리가 함께 동작하도록 했습니다.',
